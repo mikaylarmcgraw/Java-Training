@@ -1,0 +1,12 @@
+Task 1.2B Instructions
+Create a Java application that adds 2 integers and converts the integers and result to string representation. Call it IntToString
+
+Create a new Java file in the Task 1 folder
+Requirements:
+Takes integers between 0 and 5.
+Adds the two integers.
+Print a equation to screen along with results.
+Example 1 would be One, 2 would be Two.
+When done meeting requirements Commit that source to Github under Task 1 Folder.
+Command Prompt: git commit -a -m "Task 1.2 Complete"
+Command Prompt: git push
