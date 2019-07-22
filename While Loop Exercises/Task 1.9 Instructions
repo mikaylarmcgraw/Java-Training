@@ -1,0 +1,7 @@
+Task 1.9 more looping 
+Inform the user of how the program will behave
+Allow the user two input integers
+While the first input value is less than the second value
+Loop from the lower value through and including the upper value 
+For each value, display the value and state whether it is even or odd 
+Get two more integers from the user
