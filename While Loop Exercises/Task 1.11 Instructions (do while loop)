@@ -1,0 +1,8 @@
+Task 1.11 do while looping exercise:
+Inform the user of how the program will behave
+Ask the user to input an integer other than 99
+Do the following until the user enters 99:
+If the integer is odd, display to the user the value of the integer squared
+If the integer is even, display the value of the integer multiplied by 10
+Ask the user for another integer 
+Where appropriate, inform the user that the program is done looping
