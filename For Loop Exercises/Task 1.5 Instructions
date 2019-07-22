@@ -1,0 +1,6 @@
+Requirments: 
+    
+Create a For loop that will execute nine times
+Use <= for the loop control condition test statement
+Display using println the value of i each time during the loop
+After control is out of the loop, display the value of I 
