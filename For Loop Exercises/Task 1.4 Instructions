@@ -1,0 +1,6 @@
+Requirments: 
+    
+
+Create a For loop that will execute five times
+Display using println the value of i each time during the loop
+After control is out of the loop, display the value of i 
