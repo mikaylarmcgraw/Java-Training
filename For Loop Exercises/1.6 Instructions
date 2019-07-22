@@ -1,0 +1,10 @@
+Task 1.6
+•	Use a for loop 
+•	Allow the user two input integers, the first must be less than the second
+•	Loop from the lower value through and including the upper value
+o	For each value, display the value and state whether it is even or odd
+
+Note:
+Modulus operator is the % sign, modulus shows the remainder
+If x = 5 and y = 2, x % y = 1.
+If x = 4 and y = 2, x % y = 0.
