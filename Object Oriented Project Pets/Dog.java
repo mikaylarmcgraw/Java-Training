@@ -2,13 +2,26 @@
 class Dog extends Pet
 {
    
-
+    public void play()
+    {
+        
+        Mood = "very happy";
+        
+    }    
     
-    //not messing with constructor right now will come back to it later
+    
     public Dog()
     {
         
        PetType = "dog";  
+        
+        
+    }    
+    
+    public Dog(String dogType)
+    {
+        
+       PetType = dogType;  
         
         
     }    

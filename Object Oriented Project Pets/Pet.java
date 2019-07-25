@@ -11,6 +11,7 @@ public class Pet
     String Team = null;
     String State = null;
     String Activity = null;
+    String Food = null;
     Scanner pets = new Scanner(System.in);
     
     //not messing with constructor right now will come back to it later
@@ -59,9 +60,23 @@ public class Pet
             
  
     }   
- 
-  
+    
+    public void feedPet()
+    {
+        
+        Food = "dry kibble";
+        
+        System.out.println("Your "+PetType +" is eating "+Food);
         
     }    
+  
+    public void playWithPet()
+    {
+        
+     
+        
+    }    
+        
+}    
 
 
