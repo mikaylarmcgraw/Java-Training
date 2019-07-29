@@ -21,11 +21,12 @@ public class switchExercise
         System.out.println("2 = feed treat");
         System.out.println("3 = scold");
         System.out.println("4 = stop interacting and send your dog to bed");
-
-        while(flag)
+        System.out.println("");
+        
+        while (flag)
         {
             //capture input
-            System.out.println("what activity would you like to do with your dog?");
+            System.out.println("What activity would you like to do with your dog?");
             userInput = uI.nextInt();
             switch (userInput) 
             {
@@ -62,8 +63,11 @@ public class switchExercise
                 System.out.println("Your dog's tolerence is: "+Tolerence);
                 break;
 
+                default:
+                System.out.println("Please enter activity value 1-4 to continue interaction.");
+                
             }
-
+            System.out.println("");
         }  
     }
 
