@@ -39,6 +39,14 @@ class Fish extends Pet
 
         
     }    
+    
+        public void feedPet()
+    {
         
+        Food = "Vitamin C enriched flakes.";
+        
+        System.out.println("Your "+PetType +" is eating "+Food);
+        
+    }    
     
 }    

@@ -1,4 +1,3 @@
-
 //Pets Revision
 
 import java.util.Scanner;
@@ -11,15 +10,20 @@ public class Pet
     String Team = null;
     String State = null;
     String Activity = null;
+    String Food = null;
+    String Tolerance = null;
     Scanner pets = new Scanner(System.in);
     
-    //not messing with constructor right now will come back to it later
+    
     public Pet()
     {
          Mood = "happy";
+         Tolerance = "medium";
          State = "alive";
          Activity = "playing";
+         
     }
+    
     //getting information on what pet user wants to know about
     public void describeYourself()
     {
@@ -27,7 +31,7 @@ public class Pet
         System.out.println("My new pet type is: "+PetType);
         System.out.println("My pet's mood is : "+Mood);
         System.out.println("My pet is : "+State);
- 
+
       
     }
     
@@ -52,16 +56,23 @@ public class Pet
     public void exteriorCoat()
     {
   
-           Exterior = "medium to long length soft fur.";
+           Exterior = "medium - long length soft fur.";
         
            System.out.println("Your "+PetType +" has "+Exterior); 
         
             
  
     }   
- 
-  
+    
+    public void feedPet()
+    {
+        
+        Food = "dry kibble";
+        
+        System.out.println("Your "+PetType +" is eating "+Food);
         
     }    
+  
 
-
+        
+}    
