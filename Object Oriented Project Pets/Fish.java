@@ -1,4 +1,4 @@
-class Fish extends Pet
+ class Fish extends Pet
 {
     int fishFeedCounter = 0;
     
@@ -8,16 +8,11 @@ class Fish extends Pet
         Mood = "Mischievous";
         Activity = "swimming and blowing bubbles";
         PetType = "fish";
-<<<<<<< HEAD
         Name = "Buck";
-=======
-        name = "Buck";
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
     
     }
 
     
-<<<<<<< HEAD
     public void feed()
     {
         System.out.println("Your fish is eating vitamin C flakes!");
@@ -62,30 +57,6 @@ class Fish extends Pet
         return petSpeak;
         
     } 
-=======
-    public void describeYourself()
-    {
-        Mood = "Mischievous";
-        Activity = "swimming and blowing bubbles";
-        
-        super.describeYourself();
-        
-        
-    }
-
-    
-    public void play()
-    {
-        Mood = "Meh... whatever";
-        
-        
-        System.out.println("You're blowing bubbles with "+name+"!");
-        
-        super.play();
-        
-        
-    }    
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
     
     
-}    
+} 
