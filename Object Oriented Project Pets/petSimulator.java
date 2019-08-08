@@ -12,7 +12,6 @@ class petSimulator
         Dog MySecondDog = new Dog("Bolt Up");
         Cat MyNewCat = new Cat();
         Fish MyNewFish = new Fish();
-<<<<<<< HEAD
 
         //initializing variables
         String UserInput = null;
@@ -26,26 +25,11 @@ class petSimulator
         //welcome message
         System.out.println("Welcome to Pet Simulator!!");
         System.out.println("I'll be happy to teach you more about our pet farm!");
-=======
-        
-        //initializing variables
-        String UserInput = null;
-        int interactWithPet = 0;
-        boolean flagloop1 = true;
-        boolean flagloop2 = true;
-        Scanner pets = new Scanner(System.in);
-        
-        //welcome message
-        System.out.println("Welcome to Pet Simulator!!");
-        System.out.println("I'll be happy to teach you more about our pet farm!");
-        
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
 
         //begining loop have user choose which animal to learn about
         while (flagloop1)
         {
             flagloop2 = true;
-<<<<<<< HEAD
             System.out.println("");
             System.out.println("Please enter a pet you'd like to learn more information about or enter \"exit\" to end Pet Simulator"); 
             System.out.println("Here's the available pet options in our farm:");
@@ -59,55 +43,28 @@ class petSimulator
             {
                 //asigning currentPet to object
 
-=======
-            System.out.println("");
-            System.out.println("Please enter a pet you'd like to learn more information about or enter \"exit\" to end Pet Simulator"); 
-            System.out.println("Here's the available pet options in our farm:");
-            System.out.println("Enter \"dog\" to learn more about Bark Twain");
-            System.out.println("Enter \"cat\" to learn more about Friskers");
-            System.out.println("Enter \"fish\" to learn more about Buck");
-            UserInput = pets.nextLine();
-            System.out.println("");
-            switch (UserInput)
-            {
-                //asigning currentPet to object
-                
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                 case "dog":
                 currentPet = MyNewDog;
                 System.out.println("Here's information about your pet: ");
                 currentPet.describeYourself();
                 break;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                 case "cat":
                 currentPet = MyNewCat;
                 System.out.println("Here's information about your pet: ");
                 currentPet.describeYourself();
                 break;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                 case "fish":
                 currentPet = MyNewFish;
                 System.out.println("Here's information about your pet: ");
                 currentPet.describeYourself();
                 break;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                 case "exit":
                 flagloop1 = false;
                 flagloop2 = false;
                 break;
-<<<<<<< HEAD
 
                 default:
                 System.out.println("I don't know much about that pet please enter: dog, cat or fish to learn more about our animals.");
@@ -125,29 +82,10 @@ class petSimulator
                 switch (interactWithPet)
                 {
                     
-=======
-                
-                default:
-                System.out.println("I don't know much about that pet please enter: dog, cat or fish to learn more about our animals.");
-                System.out.println("Please enter \"exit\" to end Pet Simulator.");
-            
-            }    
-
-            
-            while (flagloop2 == true)
-             {   
-                System.out.println("");
-                System.out.println("Here are the different activites you can do with your pet:");
-                currentPet.activity();
-                interactWithPet = pets.nextInt();
-                switch (interactWithPet)
-                {
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                     case 1:
                     System.out.println("You selected play with "+currentPet.PetType);
                     currentPet.play();
                     break;
-<<<<<<< HEAD
 
                     case 2:
                     System.out.println("You chose to feed your "+currentPet.PetType);
@@ -169,20 +107,6 @@ class petSimulator
                     break;
                     
                     case 5:
-=======
-                    
-                    case 2:
-                    System.out.println("You chose to feed your "+currentPet.PetType);
-                    currentPet.play();
-                    break;
-                    
-                    case 3:
-                    System.out.println("You chose to scold "+currentPet.name+" for being a Broncos fan!");
-                    currentPet.play();
-                    break;
-                    
-                    case 4:
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
                     System.out.println("Program is redirecting you to select another pet.");
                     flagloop2 = false;
                     break;
@@ -192,15 +116,9 @@ class petSimulator
                 }
 
             }
-<<<<<<< HEAD
 
             
 
-=======
-            
-            UserInput = pets.nextLine();
-            
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
         }
         System.out.println("Thank you for playing with the Pet Simulator!");
         System.out.println("We enjoyed having you learn about our animal farm.");
@@ -208,7 +126,3 @@ class petSimulator
     }
 
 }
-<<<<<<< HEAD
- 
-=======
->>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
