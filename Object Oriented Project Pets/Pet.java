@@ -10,11 +10,17 @@ public class Pet
     String Mood = null;
     String Team = null;
     String State = null;
+<<<<<<< HEAD
     String Name = null;
     String Activity = null;
     String Food = null;
     String Tolerance = null;
     String petSpeak = null;
+=======
+    String name = null;
+    String Activity = null;
+    String Food = null;
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
     Scanner pets = new Scanner(System.in);
     
     //not messing with constructor right now will come back to it later
@@ -38,6 +44,7 @@ public class Pet
     public void describeYourself()
     {
         
+<<<<<<< HEAD
         System.out.println("Pet choosen was: "+PetType);
         System.out.println("Your "+PetType+"'s name is: "+Name);
         System.out.println("Your pet's mood is: "+Mood);
@@ -55,6 +62,13 @@ public class Pet
         }    
         
         System.out.println(Name+" is "+Activity);
+=======
+        System.out.println("My new pet type is: "+PetType);
+        System.out.println("Your "+PetType+"'s name is: "+name);
+        System.out.println("My pet's mood is: "+Mood);
+        System.out.println("My pet is : "+State);
+        System.out.println(name+" is "+Activity);
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
       
     }
    
@@ -63,18 +77,29 @@ public class Pet
         
         
         
+<<<<<<< HEAD
         System.out.println(Name+"'s mood is: "+Mood);   
         
     }    
     
     public void feed()
+=======
+        System.out.println(name+"'s mood is: "+Mood);   
+        
+    }    
+    
+    public void feedPet()
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
     {
         
         Food = "dry kibble";
         
         System.out.println("Your "+PetType +" is eating "+Food);
+<<<<<<< HEAD
         Mood = "Full!";
         Tolerance = "Moderate";
+=======
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
         
     } 
     
@@ -94,8 +119,12 @@ public class Pet
         System.out.println("Enter 1 to play");
         System.out.println("Enter 2 to feed");
         System.out.println("Enter 3 to scold");
+<<<<<<< HEAD
         System.out.println("Enter 4 to speak to your pet");
         System.out.println("Enter 5 to select another pet to play with");
+=======
+        System.out.println("Enter 4 to select another pet to play with");
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
     }
     
     public void exteriorCoat()
@@ -110,6 +139,7 @@ public class Pet
     }   
     
    
+<<<<<<< HEAD
     public void scold()
     {
         System.out.println("You scolded your "+PetType+" for being a Broncos fan!");
@@ -138,3 +168,9 @@ public class Pet
 }    
 
 
+=======
+  
+ 
+        
+}    
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91

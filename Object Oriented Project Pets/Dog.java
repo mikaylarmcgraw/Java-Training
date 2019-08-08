@@ -6,7 +6,11 @@ class Dog extends Pet
     {
         
        PetType = "dog";  
+<<<<<<< HEAD
        Name = "Bark Twain"; 
+=======
+       name = "Bark Twain"; 
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
        
        
         
@@ -25,7 +29,11 @@ class Dog extends Pet
     {
         Mood = "Happy!";
         
+<<<<<<< HEAD
         System.out.println("You're playing fetch with "+Name+"!");
+=======
+        System.out.println("You're playing fetch with "+name+"!");
+>>>>>>> c0b8e895b607fb4898e949c66a14e61669938e91
         
         super.play();
         
