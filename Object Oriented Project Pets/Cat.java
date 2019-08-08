@@ -7,37 +7,41 @@ class Cat extends Pet
         
         PetType = "cat";
         
-    
+        name = "Friskers";
     
     }
     
     public void describeYourself()
     {
-        Mood = "playful";
+        Mood = "Indifferent";
+        Activity = "playing with cat nip.";
         
-        System.out.println("My new pet type is: "+PetType);
-        System.out.println("My pet's mood is : "+Mood);
-        System.out.println("My pet is : "+State);
+        super.describeYourself();
         
-        
-    }
-    
-     public void activity()
-    {
-        Activity = "playing with catnip";
-        
-        System.out.println("Your " +PetType +" is "+Activity);
         
     }
     
-    
-    
-    public void exteriorCoat()
+    public void play()
     {
+        Mood = "Impressed";
+        
+        
+        System.out.println("You gave "+name+" cat nip!");
+        
+        super.play();
+        
+        
+    } 
     
     
+<<<<<<< HEAD
+
+}    
+    
+=======
        Exterior = "medium length soft fur."; 
         
        System.out.println("Your "+PetType +" has "+Exterior);  
     }    
 }    
+>>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
