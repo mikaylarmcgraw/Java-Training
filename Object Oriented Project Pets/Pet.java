@@ -1,3 +1,4 @@
+
 //Pets Revision
 
 import java.util.Scanner;
@@ -9,31 +10,20 @@ public class Pet
     String Mood = null;
     String Team = null;
     String State = null;
-    String name = null;
+    String Name = null;
     String Activity = null;
     String Food = null;
-<<<<<<< HEAD
-=======
     String Tolerance = null;
->>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
+    String petSpeak = null;
     Scanner pets = new Scanner(System.in);
     
-    
+    //not messing with constructor right now will come back to it later
     public Pet()
     {
-<<<<<<< HEAD
          Mood = "Happy";
          State = "Alive";
          Activity = "Playing";
-=======
-         Mood = "happy";
-         Tolerance = "medium";
-         State = "alive";
-         Activity = "playing";
-         
->>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
     }
-    
     //getting information on what pet user wants to know about
     public void petsInFarm()
     {
@@ -48,15 +38,23 @@ public class Pet
     public void describeYourself()
     {
         
-        System.out.println("My new pet type is: "+PetType);
-        System.out.println("Your "+PetType+"'s name is: "+name);
-        System.out.println("My pet's mood is: "+Mood);
-        System.out.println("My pet is : "+State);
-<<<<<<< HEAD
-        System.out.println(name+" is "+Activity);
-=======
-
->>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
+        System.out.println("Pet choosen was: "+PetType);
+        System.out.println("Your "+PetType+"'s name is: "+Name);
+        System.out.println("Your pet's mood is: "+Mood);
+        if (State == "dead")
+        {
+            
+          System.out.println("Your pet is : "+State);  
+          System.out.println("You're unable to access the "+PetType+" sorry :("); 
+            
+        }
+        else
+        {
+            System.out.println("Your pet is: "+State);
+            
+        }    
+        
+        System.out.println(Name+" is "+Activity);
       
     }
    
@@ -65,16 +63,18 @@ public class Pet
         
         
         
-        System.out.println(name+"'s mood is: "+Mood);   
+        System.out.println(Name+"'s mood is: "+Mood);   
         
     }    
     
-    public void feedPet()
+    public void feed()
     {
         
         Food = "dry kibble";
         
         System.out.println("Your "+PetType +" is eating "+Food);
+        Mood = "Full!";
+        Tolerance = "Moderate";
         
     } 
     
@@ -94,13 +94,14 @@ public class Pet
         System.out.println("Enter 1 to play");
         System.out.println("Enter 2 to feed");
         System.out.println("Enter 3 to scold");
-        System.out.println("Enter 4 to select another pet to play with");
+        System.out.println("Enter 4 to speak to your pet");
+        System.out.println("Enter 5 to select another pet to play with");
     }
     
     public void exteriorCoat()
     {
   
-           Exterior = "medium - long length soft fur.";
+           Exterior = "medium to long length soft fur.";
         
            System.out.println("Your "+PetType +" has "+Exterior); 
         
@@ -108,23 +109,32 @@ public class Pet
  
     }   
     
-<<<<<<< HEAD
    
-  
- 
-        
-}    
-=======
-    public void feedPet()
+    public void scold()
     {
+        System.out.println("You scolded your "+PetType+" for being a Broncos fan!");
         
-        Food = "dry kibble";
+        Mood = "Sad";
         
-        System.out.println("Your "+PetType +" is eating "+Food);
+        Tolerance = "Low";
         
-    }    
-  
->>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
+        System.out.println(Name+"'s mood is: "+Mood);
+        System.out.println("Your "+PetType+"'s tolerance is: "+Tolerance);
+
 
         
+ 
+    } 
+    
+    public String speak()
+    {
+        System.out.println("You chose to speak with "+Name);
+        
+        return "Your pet says:"+petSpeak;
+        
+       
+        
+    }    
 }    
+
+

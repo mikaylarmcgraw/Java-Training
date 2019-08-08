@@ -1,49 +1,62 @@
 class Fish extends Pet
 {
+    int fishFeedCounter = 0;
+    
     
     public Fish()
     {
-    
-        PetType = "fish";
-        name = "Buck";
-    
-    }
-    
-    public void describeYourself()
-    {
         Mood = "Mischievous";
         Activity = "swimming and blowing bubbles";
-        
-        super.describeYourself();
-        
-        
+        PetType = "fish";
+        Name = "Buck";
+    
     }
 
     
+    public void feed()
+    {
+        System.out.println("Your fish is eating vitamin C flakes!");
+        
+        fishFeedCounter++;
+        if (fishFeedCounter == 2)
+        {
+            
+           System.out.println("Your fish is feeling very full!");
+           System.out.println("You may want to slow down on the feedings...");
+            
+        }    
+        else if (fishFeedCounter == 3)
+        {
+            System.out.println("Oh know your fish died!!");
+            State = "dead";
+            
+            
+            
+        }    
+        
+    }    
+
     public void play()
     {
         Mood = "Meh... whatever";
         
         
-        System.out.println("You're blowing bubbles with "+name+"!");
+        System.out.println("You're blowing bubbles with "+Name+"!");
         
         super.play();
         
-<<<<<<< HEAD
         
     }    
     
-=======
-    }    
-    
-        public void feedPet()
+    public String speak()
     {
         
-        Food = "Vitamin C enriched flakes.";
+        petSpeak = "ugh.... you again...";
         
-        System.out.println("Your "+PetType +" is eating "+Food);
         
-    }    
->>>>>>> 4d4737b2ef1b23d880c6755f30236e01a0fca953
+        return petSpeak;
+        
+    } 
+    
     
 }    
