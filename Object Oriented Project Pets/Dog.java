@@ -32,15 +32,6 @@ class Dog extends Pet
         
     }    
 
-    public String speak()
-    {
-        
-        petSpeak = "Woof woof! So so so so happy to see you!";
-        
-        
-        return petSpeak;
-        
-    } 
     
             
 }   
