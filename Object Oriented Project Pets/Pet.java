@@ -126,13 +126,35 @@ public class Pet
  
     } 
     
-    public String speak()
+    public String speak(String petSpeak)
     {
         System.out.println("You chose to speak with "+Name);
+        String response = null;
+        switch (petSpeak)
+        {
+            case "hello":
+            response = "Hello i'm so happy to see you!!";
+            break;
+            
+            case "praise":
+            System.out.println("You chose to praise your "+PetType);
+            response = "Oh boy I love making you happy!!!!";
+            break;
+            
+            case "discipline":
+            System.out.println("You chose to discipline your "+PetType);
+            response = "Oh no i'm sorry I was a bad "+PetType+" I will try to be better...";
+            break;
+            
+            
+            default:
+            System.out.println("i'm sorry I don't know that command");
+            response = "I'm confussed...";
+            
+        }    
         
-        return "Your pet says:"+petSpeak;
-        
-       
-        
-    }    
+        return Name + " says: " + response;
+
+    } 
+    
 }    
