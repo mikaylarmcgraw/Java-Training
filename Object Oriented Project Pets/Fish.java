@@ -1,4 +1,4 @@
- class Fish extends Pet
+class Fish extends Pet
 {
     int fishFeedCounter = 0;
     
@@ -48,15 +48,36 @@
         
     }    
     
-    public String speak()
+    public String speak(String petSpeak)
     {
+        System.out.println("You chose to speak with "+Name);
+        String response = null;
+        switch (petSpeak)
+        {
+            case "hello":
+            response = "ughh you again.... what do you want?";
+            break;
+            
+            case "praise":
+            System.out.println("You chose to praise your "+PetType);
+            response = "Human I know I am a superior pet.....";
+            break;
+            
+            case "discipline":
+            System.out.println("You chose to discipline your "+PetType);
+            response = "DON'T YOU DARE!!!";
+            break;
+            
+            
+            default:
+            System.out.println("i'm sorry I don't know that command");
+            response = "I'm confussed...you are truly frustraing..*eye roll*";
+            
+        }    
         
-        petSpeak = "ugh.... you again...";
-        
-        
-        return petSpeak;
-        
+        return "Your pet says: "+response;
+
     } 
     
     
-} 
+}  
