@@ -15,7 +15,8 @@ class petSimulator
 
         //initializing variables
         String UserInput = null;
-        String speakUserInput = null;
+        String petSpeak = null;
+        String response = null;
         int interactWithPet = 0;
         boolean flagloop1 = true;
         boolean flagloop2 = true;
@@ -102,8 +103,8 @@ class petSimulator
                     System.out.println("Type \"hello\" to greet your pet.");
                     System.out.println("Type \"praise\" to reward your pet.");
                     System.out.println("Type \"discipline\" to correct your pet.");
-                    speakUserInput = stringScanner.nextLine();
-                    System.out.println(currentPet.speak());
+                    petSpeak = stringScanner.nextLine();
+                    System.out.println(currentPet.speak(petSpeak));
                     break;
                     
                     case 5:
