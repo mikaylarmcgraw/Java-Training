@@ -1,0 +1,141 @@
+//queue exercise
+
+public class queue
+{
+    //initializing variables
+    int arrayLength = 4;  
+    int frontOfQueue = -1;
+    int backOfQueue = 0;
+    //creating an array type integer
+    int[] queueArray;
+    
+    public queue()
+    {
+        queueArray = new int [arrayLength];
+
+        
+    }
+    
+    
+    public void enqueue(int userIntegerEntered)
+    {
+        frontOfQueue++;
+        if (frontOfQueue == queueArray.length)
+        {
+            frontOfQueue--;
+            System.out.println("Cannot push anymore numbers into stack it's reached its limit.");
+            System.out.println("Please use the dequeue method to clear some space to push more integers.");
+            
+        } 
+        else if (frontOfQueue == -1)
+              {
+                  frontOfQueue++; 
+                  queueArray[frontOfQueue] = userIntegerEntered;
+                    
+                  
+              }    
+            
+              else
+                 {
+                    
+                    for(int i = frontOfQueue; i > backOfQueue; i--)
+                    {
+
+                           queueArray[i] = queueArray[i-1];
+
+                    }    
+                    queueArray[backOfQueue] = userIntegerEntered;
+                       
+            
+                }  
+        
+    }
+         
+    public void dequeue()
+    {
+        if (frontOfQueue == -1)
+        {
+            
+            System.out.println("i'm sorry the queue is empty you cannot dequeue anymore.");
+            
+        }    
+        else 
+        {
+            System.out.println("You chose to dequeue: " + queueArray[frontOfQueue]);
+            queueArray[frontOfQueue] = 0; 
+            
+            frontOfQueue--;
+        }
+        
+    
+    }
+        
+    public void showTheBack()
+    {
+        if (frontOfQueue == -1)
+        {
+            
+            System.out.println("Queue is empty please enqueue to start entering integers into the queue.");   
+            
+        }    
+        else
+        {
+            System.out.println("Here's the back of your queue: " + queueArray[backOfQueue]);
+        
+        }
+    }    
+
+    public void showTheFront()
+    {
+        if (frontOfQueue == -1)
+        {
+            
+            System.out.println("Queue is empty please enqueue to start entering integers into the queue.");
+            
+        }    
+        else
+        {
+            //frontOfQueue;
+            System.out.println("Front of the queue is: " + queueArray[frontOfQueue]);
+            
+        }    
+        
+    }
+    
+    public void displayArray()
+    {
+        for (int i = 0; i < queueArray.length; i++)
+        {
+            System.out.print("Index value: " + i + " Element value: " +queueArray[i] + ", ");
+            
+            
+        }    
+        
+    }    
+    
+    public void displayQueue()
+    {
+        if (frontOfQueue == -1)
+        {
+            System.out.println("Your queue is empty.");
+            
+        }
+        else
+        {
+            for (int i = 0; i <= frontOfQueue; i++)
+            {
+                if (i == 0)
+                {
+                   
+                   System.out.print("" + queueArray[i] + "");  
+                } 
+                else
+                {
+                   System.out.print("," + queueArray[i]);   
+                }    
+            }
+        
+        }
+    }    
+    
+} 
