@@ -7,13 +7,13 @@ class linkedListMain
         
         //creating object of type linkedList called myLinkedList
         linkedList myLinkedList = new linkedList();
-        linkedListNode myNewNode = new linkedListNode();
+        Node myNewNode = new Node();
         
         //initalizing variables
         int menuOption = 0;
         boolean flag = true;
         int test = 5;
-        
+        int currentNode = 0;
         
         Scanner userInput = new Scanner(System.in);
         
@@ -35,8 +35,8 @@ class linkedListMain
             {
                 case 1:
                 System.out.println("You selected: add a node to the head of linked list!");
-                linkedListNode Node = new linkedListNode();
-                myNewNode.nodeName(menuOption);
+                myLinkedList.addNodeToHead();
+                
                 break;
                 
                 case 2:
@@ -49,7 +49,7 @@ class linkedListMain
                 
                 case 4:
                 System.out.println("You selected: display linked list!");
-                
+                myLinkedList.displayLinkedList();
                 break;
                 
                 case 5:
@@ -70,4 +70,4 @@ class linkedListMain
     }
     
     
-} 
+}    
