@@ -1,8 +1,10 @@
 public class linkedList
 {
-
+  
     
    Node nodeObject = null;
+   
+   int nextSerialNumber = 0;
    
    Node head = null;
    
@@ -20,12 +22,30 @@ public class linkedList
    {
        
        //creating a new node object
-       Node nodeObject = new Node();
-       System.out.println("Here's your new node: " + nodeObject);
-       System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
-       System.out.println("Your node points to: " + nodeObject.next);
-       nodeObject.next = head;
-       head = nodeObject;
+       if (tail == null)
+       {
+           Node nodeObject = new Node();
+           nodeObject.serialNumber = nextSerialNumber;
+           nextSerialNumber++;
+           System.out.println("Here's your new node: " + nodeObject);
+           System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+           System.out.println("Your node points to: " + nodeObject.next);
+           nodeObject.next = head;
+           head = nodeObject;
+           tail = nodeObject;
+      }
+      else
+      {
+          Node nodeObject = new Node();
+          nodeObject.serialNumber = nextSerialNumber;
+          nextSerialNumber++;
+          System.out.println("Here's your new node: " + nodeObject);
+          System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+          nodeObject.next = head;
+          head = nodeObject;
+          System.out.println("Your node points to: " + nodeObject.next);
+       
+      }    
    }
    
    public void addNodeToTail()
@@ -43,12 +63,14 @@ public class linkedList
    
    public void displayLinkedList()
    {
-       if currentNode.next >= null; currentNode.next--)
+       
+       if (currentNode != null)
        {
-           
-           
+          System.out.println(currentNode); 
+          currentNode = currentNode.next; 
        }    
+       
    }    
    
        
-}    
+}      
