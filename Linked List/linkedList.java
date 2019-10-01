@@ -12,6 +12,8 @@ public class linkedList
    
    Node currentNode = head;
    
+   boolean flag = true;
+   
    public linkedList()
    {
        
@@ -33,6 +35,9 @@ public class linkedList
            nodeObject.next = head;
            head = nodeObject;
            tail = nodeObject;
+           currentNode = head;
+           currentNode.next = nodeObject.next;
+
       }
       else
       {
@@ -44,7 +49,9 @@ public class linkedList
           nodeObject.next = head;
           head = nodeObject;
           System.out.println("Your node points to: " + nodeObject.next);
-       
+          currentNode = head;
+          currentNode.next = nodeObject.next;
+
       }    
    }
    
@@ -63,14 +70,45 @@ public class linkedList
    
    public void displayLinkedList()
    {
-       
-       if (currentNode != null)
+       if (head == null)
        {
-          System.out.println(currentNode); 
-          currentNode = currentNode.next; 
-       }    
+               System.out.print("Linked list is empty.");
+               System.out.println("");
+              
+       }
+       else
+       {
+           while (flag)
+           {
+
+               if(currentNode.next != null)
+               {
+    
+                      
+                    System.out.print(currentNode.serialNumber + " -> "); 
+                  
+                    currentNode = currentNode.next; 
+                       
+               }  
+               else if(currentNode.next == null)
+               {
+                   System.out.println(currentNode.serialNumber + " -> null");
+                   
+                   flag = false;
+                   
+                   
+               }   
+               
+            }
+       }
+   }
+       
+     
+   public void displayHead()
+   {
+       
+       System.out.println("The head of the linked list is: "+head);
        
    }    
-   
        
-}      
+} 
