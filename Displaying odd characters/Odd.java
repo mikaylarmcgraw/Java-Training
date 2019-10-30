@@ -31,7 +31,7 @@ public class Odd
        
        //looping through array of char to display only even indexes and 0 since array counting begins at 0 not 1. Odd letters will be at even indexes
        
-       for (int i = 0; i<stringToCharArray.length; i++)
+       for (int i = 0; i < stringToCharArray.length; i++)
        {
            if (i == 0  || i % 2 == 0)
            {
