@@ -20,18 +20,7 @@ public class Pyramid
         
         while (loopCounter <= pyramidLength)
         { 
-            if (pyramidLength >= 10)
-            {
-                
-                for (int m = 0; m < (pyramidLength - loopCounter); m++)
-                {
-                    
-                    //System.out.print("+");
-                    
-                }    
-                
-                
-            }   
+ 
             
             if (loopCounter >= 10)
             {
