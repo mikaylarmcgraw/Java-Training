@@ -33,6 +33,24 @@ public class Pyramid
                 
             }   
             
+            if (loopCounter >= 10)
+            {
+                for (int j = 0; j < pyramidLength - loopCounter; j++)
+                {
+                    System.out.print(" ");
+                    
+                }    
+                
+            }
+            
+            if (loopCounter < 10 && pyramidLength >= 10)
+            {    
+                for (int w = 0; w < pyramidLength - 9; w++)    
+                {
+                    System.out.print(" ");
+                
+                } 
+            }
             
             
             for (int k = 0; k < pyramidLength - loopCounter; k++)
@@ -60,4 +78,4 @@ public class Pyramid
         
     }
 
-}    
+} 
