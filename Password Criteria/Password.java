@@ -30,12 +30,12 @@ public class Password
     {   
         String passwordCriteria = "valid";
         
-        System.out.println("Password entered is: "+passwordInput);
+        System.out.println("Password entered is: "+passwordInput);   
         
         if(passwordInput.length() < 8)
         {
              passwordCriteria = "invalid";
-            
+             System.out.println("Password is too short please enter a password of atleast 8 characters.");
         }    
         else
         {
@@ -43,11 +43,17 @@ public class Password
             
             for (int i = 0; i <stringToCharArray.length; i++)
             {
-                if (stringToCharArray[i] <= 'z' || stringToCharArray[i] <= 'Z')
+                if (stringToCharArray[i] >= 'a' && stringToCharArray[i] <= 'z')
                 {
                     passwordCriteria = "valid";
                 }    
-                else if (stringToCharArray[i] <= '9')
+                else if (stringToCharArray[i] >= '0' && stringToCharArray[i] <= '9')
+                {
+                    passwordCriteria = "valid";
+                    
+                    
+                } 
+                else if (stringToCharArray[i] >= 'A' && stringToCharArray[i] <= 'Z')
                 {
                     passwordCriteria = "valid";
                     
@@ -55,7 +61,7 @@ public class Password
                 else
                 {
                     passwordCriteria = "invaid";
-                    
+                    i = stringToCharArray.length;
                 }    
             }    
             
@@ -66,4 +72,4 @@ public class Password
         
     }    
     
-}  
+} 
