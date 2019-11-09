@@ -29,7 +29,7 @@ public class Password
     public static void passwordValidation(String passwordInput)
     {   
         String passwordCriteria = "valid";
-        
+        int j = 0;
         System.out.println("Password entered is: "+passwordInput);   
         
         if(passwordInput.length() < 8)
@@ -49,7 +49,16 @@ public class Password
                 }    
                 else if (stringToCharArray[i] >= '0' && stringToCharArray[i] <= '9')
                 {
-                    passwordCriteria = "valid";
+                    j++;
+                    
+                    if (j >= 2)
+                    {
+                        passwordCriteria = "valid";
+                    }    
+                    else
+                    {
+                        passwordCriteria = "invalid";
+                    }  
                     
                     
                 } 
@@ -57,6 +66,10 @@ public class Password
                 {
                     passwordCriteria = "valid";
                     
+                }   
+                else if (stringToCharArray[i] == ' ')
+                {
+                    passwordCriteria = "valid";  
                 }    
                 else
                 {
@@ -64,12 +77,11 @@ public class Password
                     i = stringToCharArray.length;
                 }    
             }    
-            
-            
+
         }    
         
         System.out.println("Password is: " +passwordCriteria);
         
     }    
     
-} 
+}  
