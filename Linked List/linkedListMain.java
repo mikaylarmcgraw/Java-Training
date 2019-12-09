@@ -14,7 +14,7 @@ class linkedListMain
         boolean flag = true;
         int test = 5;
         Node currentNode = null;
-        
+        int serialNumberEntered = 0;
         Scanner userInput = new Scanner(System.in);
         
         System.out.println("Welcome and welcome to the Linked List simulator!");
@@ -28,9 +28,12 @@ class linkedListMain
             System.out.println("1 - add a node to the head of linked list.");
             System.out.println("2 - add a node to the tail of linked list.");
             System.out.println("3 - remove a node from linked list.");
-            System.out.println("4 - display linked list.");
-            System.out.println("5 - display head of linked list.");
-            System.out.println("6 - exit program.");
+            System.out.println("4 - add node to the right of designated node.");
+            System.out.println("5 - add node to the left of designated node.");
+            System.out.println("6 - display linked list.");
+            System.out.println("7 - display head of linked list.");
+            System.out.println("8 - exit program.");
+            System.out.println();
             menuOption = userInput.nextInt();
         
             switch (menuOption)
@@ -43,22 +46,44 @@ class linkedListMain
                 
                 case 2:
                 System.out.println("You selected: add a node to the tail of linked list!");
+                myLinkedList.addNodeToTail();
                 break;
                 
                 case 3:
                 System.out.println("You selected: remove a node from linked list!");
+                System.out.println("Please enter in a serial number of the node you'd like to remove:");
+                serialNumberEntered = userInput.nextInt();
+                System.out.println("You chose to remove node: "+serialNumberEntered);
+                System.out.println("Here is the updated linked list:");
+                myLinkedList.removeNode(serialNumberEntered);
+                myLinkedList.displayLinkedList();
                 break;
                 
                 case 4:
-                System.out.println("You selected: display linked list!");
+                System.out.println("You selected: add node to the right of designated node in your linked list!");
+                System.out.println("Please enter in the serial number of the node you'd like to add to the right of:");
+                serialNumberEntered = userInput.nextInt();
+                myLinkedList.addToTheRight(serialNumberEntered);
+                System.out.println("Here is your new linked list: ");
                 myLinkedList.displayLinkedList();
                 break;
                 
                 case 5:
-                myLinkedList.displayHead();
+                System.out.println("You selected: add node to the left of designated node in your linked list!");
+                System.out.println("Please enter in the serial number of the node you'd like to add to the left of:");
+                serialNumberEntered = userInput.nextInt();
                 break;
                 
                 case 6:
+                System.out.println("You selected: display linked list!");
+                myLinkedList.displayLinkedList();
+                break;
+                
+                case 7:
+                myLinkedList.displayHead();
+                break;
+                
+                case 8:
                 System.out.println("Exiting program...");
                 System.out.println("Thank you for using the Linked List Sumulator!");
                 flag = false;
