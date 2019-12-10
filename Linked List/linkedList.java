@@ -57,8 +57,8 @@ public class linkedList
    
    public void addNodeToTail()
    {
-       if (tail == null)
-       {
+      if (tail == null)
+      {
            Node nodeObject = new Node();
            nodeObject.serialNumber = nextSerialNumber;
            nextSerialNumber++;
@@ -88,42 +88,56 @@ public class linkedList
    {
        boolean flag2 = true;
        currentNode = head;
-       
-       while(flag2 == true)
+       if (head == null)
        {
-           if (removeNodeSerialNumber == head.serialNumber)
+           
+           System.out.println("Linked list is empty unable to remove node please select another option.");
+           
+       }   
+           else
            {
-               
-               head = head.next;
-               
-               flag2 = false;
-           }  
-           else if (removeNodeSerialNumber == tail.serialNumber)
+           while(flag2 == true)
            {
-               while(currentNode.next != tail)
+               if (removeNodeSerialNumber == head.serialNumber)
                {
-                   currentNode = currentNode.next;
                    
+                   head = head.next;
+                   
+                   flag2 = false;
+               }  
+               else if (removeNodeSerialNumber == tail.serialNumber)
+               {
+                   while(currentNode.next != tail)
+                   {
+                       currentNode = currentNode.next;
+                       
+                   }
+                   tail = currentNode;
+                   tail.next = null;
+                   flag2 = false;
                }
-               tail = currentNode;
-               tail.next = null;
-               flag2 = false;
-           }
-           else if(currentNode.next.serialNumber == removeNodeSerialNumber)
-           {
+               else if(currentNode.next.serialNumber == removeNodeSerialNumber)
+               {
+                   
+                   currentNode.next = currentNode.next.next;
+                   
+                   flag2 = false;
+               }  
                
-               currentNode.next = currentNode.next.next;
-               
-               flag2 = false;
-           }   
                else
                {
-                   currentNode = currentNode.next;
-                   
-                   
+                       currentNode = currentNode.next;
+                       
+                       //error trapping didn't find serial number entered
+                       if (currentNode == tail)
+                       {
+                           System.out.println("Serial number not found in linked list please enter a valid # to remove.");
+                           flag2 = false;
+                       }    
+                       
                }
-       }
-       
+           }
+        }
    }
    
    public void displayLinkedList()
@@ -168,26 +182,65 @@ public class linkedList
    
    public void addToTheRight(int serialNumberEntered)
    {
-           currentNode = head;
-           while (currentNode.serialNumber!= serialNumberEntered)
-           {
-               currentNode = currentNode.next;
-               
-           }   
-           Node nodeObject = new Node();
-           nodeObject.serialNumber = nextSerialNumber;
-           nextSerialNumber++;
-           System.out.println("Here's your new node: " + nodeObject);
-           System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
-           nodeObject.next = currentNode.next;
-           currentNode.next = nodeObject;
+               if (head == null)
+               {
+                   
+                   System.out.println("Linked list is empty, this feature is disabled until nodes are populated in the linked list.");
+                   
+               }
+                   else
+                   {
+                       currentNode = head;
+                       while (currentNode.serialNumber!= serialNumberEntered &&currentNode != tail)
+                       {
+                               currentNode = currentNode.next;
+                               
+        
+                               
+                       }   
+                       if (currentNode == tail && currentNode.serialNumber != serialNumberEntered)
+                       {
+                          System.out.println("Serial number not found in linked list please enter a valid # to remove.");
+                                   
+                       } 
+                           else
+                           {
+                               Node nodeObject = new Node();
+                               nodeObject.serialNumber = nextSerialNumber;
+                               nextSerialNumber++;
+                               System.out.println("Here's your new node: " + nodeObject);
+                               System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+                               nodeObject.next = currentNode.next;
+                               currentNode.next = nodeObject;
+                          }
+                   }
    }
    
-   public void addToTheLeft()
+   public void addToTheLeft(int serialNumberEntered)
    {
        
-       
-       
+       if (head == null)
+       {
+         System.out.println("Linked list is empty, this feature is disabled until nodes are populated in the linked list.");
+           
+       }
+           else
+           {
+               currentNode = head;
+               while(currentNode.next.serialNumber != serialNumberEntered)
+               {
+                   currentNode = currentNode.next;
+                   
+                   
+               }
+               Node nodeObject = new Node();
+               nodeObject.serialNumber = nextSerialNumber;
+               nextSerialNumber++;
+               System.out.println("Here's your new node: " + nodeObject);
+               System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+               nodeObject.next = currentNode.next;
+               currentNode.next = nodeObject;
+            }
    }
      
    public void displayHead()
@@ -197,4 +250,4 @@ public class linkedList
        
    }    
        
-}   
+}  
