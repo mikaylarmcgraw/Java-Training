@@ -72,6 +72,9 @@ class linkedListMain
                 System.out.println("You selected: add node to the left of designated node in your linked list!");
                 System.out.println("Please enter in the serial number of the node you'd like to add to the left of:");
                 serialNumberEntered = userInput.nextInt();
+                myLinkedList.addToTheLeft(serialNumberEntered);
+                System.out.println("Here is your new linked list: ");
+                myLinkedList.displayLinkedList();
                 break;
                 
                 case 6:
