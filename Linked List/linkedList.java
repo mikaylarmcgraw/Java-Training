@@ -12,7 +12,7 @@ public class linkedList
    
    Node currentNode = null;
    
-  
+   Node prevNode = null;
    
    public linkedList()
    {
@@ -55,6 +55,7 @@ public class linkedList
       }    
    }
    
+   
    public void addNodeToTail()
    {
       if (tail == null)
@@ -84,59 +85,92 @@ public class linkedList
     
    }   
    
+   public boolean isLinkedListEmpty(boolean test)
+   {
+       if (head == null)
+       {
+           test = true;
+           
+       }
+       else
+       {
+           
+           test = false;
+       }
+       return test;
+   }
+   
    public void removeNode(int removeNodeSerialNumber)
    {
-       boolean flag2 = true;
+       boolean flag = true;
        currentNode = head;
        if (head == null)
        {
            
            System.out.println("Linked list is empty unable to remove node please select another option.");
            
-       }   
+       } 
            else
            {
-           while(flag2 == true)
-           {
-               if (removeNodeSerialNumber == head.serialNumber)
+               currentNode = head;
+               prevNode = currentNode;
+               while(flag)
                {
                    
-                   head = head.next;
-                   
-                   flag2 = false;
-               }  
-               else if (removeNodeSerialNumber == tail.serialNumber)
-               {
-                   while(currentNode.next != tail)
+                   if (head == tail)
                    {
-                       currentNode = currentNode.next;
-                       
-                   }
-                   tail = currentNode;
-                   tail.next = null;
-                   flag2 = false;
-               }
-               else if(currentNode.next.serialNumber == removeNodeSerialNumber)
-               {
-                   
-                   currentNode.next = currentNode.next.next;
-                   
-                   flag2 = false;
-               }  
-               
-               else
-               {
-                       currentNode = currentNode.next;
-                       
-                       //error trapping didn't find serial number entered
-                       if (currentNode == tail)
+                       if (currentNode.serialNumber == removeNodeSerialNumber)
                        {
-                           System.out.println("Serial number not found in linked list please enter a valid # to remove.");
-                           flag2 = false;
-                       }    
-                       
-               }
-           }
+                           
+                           head = null; 
+                           tail = null;
+                           
+                       }
+                       else
+                       {
+                           System.out.println("Serial number not found, please enter a valid serial number to remove.");
+                           
+                       }
+                       flag = false;
+                   }  
+                   else 
+                   {
+                      if(currentNode.serialNumber == removeNodeSerialNumber)
+                      
+                      {
+                          if (currentNode == head)
+                          {
+                              head = head.next;
+                              
+                          }
+                          else if (currentNode.next != null)
+                          {
+                              prevNode.next = currentNode.next;
+                             
+                          }
+                          else
+                          {
+                              tail = prevNode;
+                              tail.next = null;
+                              
+                          }
+                          flag = false;
+                        }   
+                      else
+                      {
+                          if (currentNode.next != null)
+                          {
+                              prevNode = currentNode; 
+                              currentNode = currentNode.next;
+                          }
+                          else
+                          {
+                              System.out.println("Serial number not found in linked list.");
+                              flag = false;
+                          }
+                      }
+                   }
+                }
         }
    }
    
@@ -182,7 +216,7 @@ public class linkedList
    
    public void addToTheRight(int serialNumberEntered)
    {
-               if (head == null)
+               if(head == null)
                {
                    
                    System.out.println("Linked list is empty, this feature is disabled until nodes are populated in the linked list.");
@@ -191,20 +225,31 @@ public class linkedList
                    else
                    {
                        currentNode = head;
-                       while (currentNode.serialNumber!= serialNumberEntered &&currentNode != tail)
+                       while (currentNode.serialNumber!= serialNumberEntered && currentNode != tail)
                        {
                                currentNode = currentNode.next;
                                
         
                                
                        }   
-                       if (currentNode == tail && currentNode.serialNumber != serialNumberEntered)
+                       if(currentNode == tail && currentNode.serialNumber != serialNumberEntered)
                        {
-                          System.out.println("Serial number not found in linked list please enter a valid # to remove.");
+                          System.out.println("Serial number not found in linked list please enter a valid # to add node to.");
                                    
                        } 
-                           else
-                           {
+                       else if (tail.serialNumber == serialNumberEntered)
+                       {
+                               Node nodeObject = new Node();
+                               nodeObject.serialNumber = nextSerialNumber;
+                               nextSerialNumber++;
+                               System.out.println("Here's your new node: " + nodeObject);
+                               System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+                               nodeObject.next = null;
+                               currentNode.next = nodeObject;
+                               tail = nodeObject;
+                       }
+                       else
+                       {
                                Node nodeObject = new Node();
                                nodeObject.serialNumber = nextSerialNumber;
                                nextSerialNumber++;
@@ -212,12 +257,15 @@ public class linkedList
                                System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
                                nodeObject.next = currentNode.next;
                                currentNode.next = nodeObject;
-                          }
+                           
+                           
+                       }
                    }
    }
    
    public void addToTheLeft(int serialNumberEntered)
    {
+       boolean flag = true;
        
        if (head == null)
        {
@@ -226,28 +274,67 @@ public class linkedList
        }
            else
            {
-               currentNode = head;
-               while(currentNode.next.serialNumber != serialNumberEntered)
-               {
-                   currentNode = currentNode.next;
+                prevNode = head;
+                currentNode = head;
+                while (flag)
+                {
+
                    
-                   
-               }
-               Node nodeObject = new Node();
-               nodeObject.serialNumber = nextSerialNumber;
-               nextSerialNumber++;
-               System.out.println("Here's your new node: " + nodeObject);
-               System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
-               nodeObject.next = currentNode.next;
-               currentNode.next = nodeObject;
+                   if (currentNode.serialNumber == serialNumberEntered)
+                   {
+                       
+                       if (currentNode == head)
+                       {
+                                   Node nodeObject = new Node();
+                                   nodeObject.serialNumber = nextSerialNumber;
+                                   nextSerialNumber++;
+                                   System.out.println("Here's your new node: " + nodeObject);
+                                   System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+                                   nodeObject.next = head;
+                                   head = nodeObject;
+                           
+                       }
+                           else
+                           {       
+                                   Node nodeObject = new Node();
+                                   nodeObject.serialNumber = nextSerialNumber;
+                                   nextSerialNumber++;
+                                   System.out.println("Here's your new node: " + nodeObject);
+                                   System.out.println("Your node's serial number is: " + nodeObject.serialNumber);
+                                   prevNode.next = nodeObject;
+                                   nodeObject.next = currentNode;
+                                   
+                           }
+                       flag = false;
+                   }
+                   else
+                   {
+                       if (currentNode.next != null)
+                       {
+                           prevNode = currentNode;
+                           currentNode = currentNode.next;
+                       }
+                           else
+                           {
+                               
+                               System.out.println("Serial number not found, please enter valid serial number of node you'd like to add to the left of.");
+                               flag = false;
+                           }
+                   }
+                }
             }
    }
      
    public void displayHead()
    {
-       
-       System.out.println("The head of the linked list is: "+head.serialNumber);
-       
+       if (head == null)
+       {
+           System.out.println("Linked list is empty, please add node(s) in order to display head of linked list.");
+       }
+       else
+       {
+           System.out.println("The head of the linked list is: "+head.serialNumber);
+       }
    }    
        
 }  
