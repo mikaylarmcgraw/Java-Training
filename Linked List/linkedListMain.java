@@ -12,12 +12,12 @@ class linkedListMain
         //initalizing variables
         int menuOption = 0;
         boolean flag = true;
-        int test = 5;
-        Node currentNode = null;
         int serialNumberEntered = 0;
         Scanner userInput = new Scanner(System.in);
+        boolean test = true;
+       
         
-        System.out.println("Welcome and welcome to the Linked List simulator!");
+        System.out.println("Welcome to the Linked List simulator!");
         System.out.println("The program is designed to help you create and manipulate your own linked list.");
         System.out.println("");
         
@@ -41,7 +41,6 @@ class linkedListMain
                 case 1:
                 System.out.println("You selected: add a node to the head of linked list!");
                 myLinkedList.addNodeToHead();
-                
                 break;
                 
                 case 2:
@@ -49,13 +48,22 @@ class linkedListMain
                 myLinkedList.addNodeToTail();
                 break;
                 
+                
                 case 3:
                 System.out.println("You selected: remove a node from linked list!");
-                System.out.println("Please enter in a serial number of the node you'd like to remove:");
-                serialNumberEntered = userInput.nextInt();
-                System.out.println("You chose to remove node: "+serialNumberEntered);
-                System.out.println("Here is the updated linked list:");
+                myLinkedList.isLinkedListEmpty(test);
+                test = myLinkedList.isLinkedListEmpty(test);
+                if (test == false)
+                {
+                    
+                    System.out.println("Please enter in a serial number of the node you'd like to remove:");
+                    serialNumberEntered = userInput.nextInt();
+                    System.out.println("You chose to remove node: "+serialNumberEntered);
+                    System.out.println();
+                }
+                
                 myLinkedList.removeNode(serialNumberEntered);
+                System.out.println("Here is the updated linked list:");
                 myLinkedList.displayLinkedList();
                 break;
                 
@@ -94,7 +102,7 @@ class linkedListMain
                 
                 default:
                 System.out.println("Menu option entered is invalid.");
-                System.out.println("Please enter options 1-4 to manipulate linked list or 5 to exit.");
+                System.out.println("Please enter options 1-7 to manipulate linked list or 8 to exit.");
                 
             }
             
