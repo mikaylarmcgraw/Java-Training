@@ -1,4 +1,3 @@
-
 public class BST
 {
 
@@ -6,7 +5,7 @@ public class BST
     
     BSTNode nodeObject = null;
     
-    BSTNode currentNode = null;
+    BSTNode currentNode = root;
     
     public BST()
     {
@@ -14,7 +13,7 @@ public class BST
         
     }
     
-    public void addToBST(int numberForBST)
+ public void addToBST(int numberForBST)
     {
         boolean flag2 = true;
         if (root == null)
@@ -67,29 +66,50 @@ public class BST
         
     }
     
-    public void displayBST()
+    public void displayBST(BSTNode currentNode)
     {
-        
-        if (root == null)
-        {
-            
-            System.out.println("BST is empty please enter a node(s) onto tree to display.");
-            
-        }
-        else
-        {
-            System.out.println(root.serialNumber);
-            if (root.left != null)
+
+       if (root == null)
+       {
+           
+           System.out.println("BST is empty please enter nodes in order to enable display function.");
+           
+       }
+       
+       else
+       {
+
+             if (currentNode.left == null) //base case
             {
-                System.out.println(root.left.serialNumber);
-            }
-            
-            if (root.right!= null)
-            {
-                System.out.println(root.right.serialNumber);
-            }
+
+                System.out.println(currentNode.serialNumber);
+                
+                System.out.println();
+                return; 
+            } 
+                else //recursion call
+                     {
+                        
+                         
+                         currentNode = currentNode.left;
+                         displayBST(currentNode);
+                         
+                     }
         
+            System.out.println(currentNode.serialNumber);
+
+           
         }
+       
+        
+
+        
+       
     }
+
+
+        
+       
+    
 
 }
